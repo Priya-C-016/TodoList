@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            border:none;
+            outline:none;
+         }
+        body{
+            background-color: rgb(196, 255, 235);
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            min-height:100vh;
+            flex-direction: column;
+        }
+        h1{
+          text-align: center;
+          margin-bottom: 10px;
+        }
+          img,video{
+            width:100%;
+            object-fit: cover;
+          }
+          main{
+            width:100dvh;
+            max-width:600px;
+            height:100dvh;
+            display: flex;
+            padding:24px;
+            flex-direction: column;
+            /* justify-content: flex-start; */
+            align-items: center;
+          }
+          .input-container{
+            width:100%;
+            /* max-width:360px;
+            max-height:100%; */
+            /* padding:25px; */
+            display: flex;
+            /* justify-content:center ; */
+            flex-direction: column;
+            align-items: center;
+          }
+          /* input{
+            background: transparent;
+            
+          } */
+          #todo-form{
+            width:100%;
+            padding:4px 12px;
+            display: flex;
+            align-items: center;
+            border:2px solid rgb(4, 4, 4);
+            border-radius: 20px;
+            background-color: rgb(255, 252, 160);
+          }
+          #inputField{
+            flex:1;
+            padding:8px;
+            /* background-color: red; */
+            background: transparent;
+          }
+          #btn{
+            width:35px;
+            height:35px;
+            background-color: #00000000;
+            border:2px solid rgb(0, 0, 0);
+            border-radius: 50px;
+          }
+          #btn:active{
+            scale:0.9;
+          }
+          .completed{
+            text-decoration:line-through;
+            color:#777;
+          }
+          .controls{
+            position:absolute;
+            top:10px;
+            right:10px;
+            display: flex;
+            gap:10px;
+            /* display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px; */
+          }
+          .controls button{
+            background-color: rgb(42, 98, 98);
+            color:white;
+            border-radius:5px;
+            cursor:pointer;
+            transition: background-color 0.3s;
+            padding:8px 12px;
+          }
+          .controls button:hover{
+            background-color: black;
+          }
+          body.dark-mode{
+            background-color: black;
+          }
+          body.dark-mode h1{
+            color:white;
+          }
+          body.dark-mode .todo-task-span,body.dark-mode #inputField{
+            color:rgb(253, 253, 253);
+          }
+          body.dark-mode #todo-form{
+            background-color: #26635cd8;
+            border:2px rgb(188, 184, 184) solid;
+          }
+          body.dark-mode #btn{
+            border:2px rgb(0, 0, 0) solid;
+          }
+          body.dark-mode .completed{
+            color:rgb(66, 66, 66);
+          }
+          body.dark-mode #todo-list .todo-task{
+            background-color: rgb(144, 109, 11);
+            color:black;
+            border:2px solid white;
+          }
+          #todo-list{
+            width:100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap:8px;
+            padding-block:10px;
+            overflow:auto;
+          }
+          #todo-list .todo-task{
+            display: flex;
+            width:100%;
+            border:1px solid black;
+            border-radius: 12px;
+            /* margin:8px 0; */
+            padding:7px 8px;
+            gap:6px;
+            align-items: center;
+            background-color: rgb(249, 216, 221);
+          }
+          #todo-list .todo-task .todo-task-span{
+            flex:1;
+            /* padding:8px; */
+            overflow:hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+
+           #todo-list .todo-task img{
+            width:20px;
+            height:100%;
+            cursor:pointer;
+          }
+    </style>
+</head>
+
+<body>
+  <h1>To Do List</h1>
+  <div class="controls">
+    <button id="dark-mode">Dark Mode</button>
+    <button id="mark-all">Mark All</button>
+    <button id="clear-all">Clear All</button>
+  </div>
+    <main>
+        <div class="input-container">
+            <form id="todo-form">
+                <input type="text" id="inputField" placeholder="Enter your Task here...">
+                <button type="submit" id="btn">
+                <img src="plus-large-svgrepo-com.svg" ></button>
+            </form>
+            <ul id="todo-list">
+                <!-- <li><span>Task</span><img src="checkbox-unchecked-svgrepo-com.svg" alt="unchecked">
+                                    <img src="trash-bin-minimalistic-svgrepo-com.svg"  alt="trash">
+                                </li>
+                                <li><span>Task</span><img src="checkbox-unchecked-svgrepo-com.svg" alt="unchecked">
+                                    <img src="trash-bin-minimalistic-svgrepo-com.svg"  alt="trash">
+                                </li>
+                                <li><span>Task</span><img src="checkbox-unchecked-svgrepo-com.svg" alt="unchecked">
+                                    <img src="trash-bin-minimalistic-svgrepo-com.svg" alt="trash">
+                                </li> -->
+            </ul>
+
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
